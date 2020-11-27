@@ -2,5 +2,7 @@ using Dbg
 using Test
 
 @testset "Dbg.jl" begin
-    # Write your tests here.
+    # currently, this is not testing any functionality, only successful compilation
+    m = [1 2; 3 4]
+    @dbg 1+2 "Hello" m
 end
