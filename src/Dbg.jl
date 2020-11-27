@@ -28,7 +28,7 @@ macro dbg(exprs...)
     location = "$mod:$file:$line  "
     esc(quote
         $((:(Base.println(Base.stderr, $location,
-            $(ex isa Symbol || ex isa Expr ? string(ex) : repr(ex)),
+            $(ex isa String ? repr(ex) : string(ex)),
             " = ", Base.repr($ex))) for ex in exprs)...)
     end)
 end
