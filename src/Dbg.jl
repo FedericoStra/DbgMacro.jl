@@ -13,12 +13,14 @@ The output goes to `stderr`.
 Useful for debugging.
 
 # Examples
+
 ```jldoctest
-julia> m = [1 2; 3 4]
+julia> m = [1 2; 3 4];
+
 julia> @dbg 1+2 "Hello" m
-Main:REPL[14]:1  1 + 2 = 3
-Main:REPL[14]:1  "Hello" = "Hello"
-Main:REPL[14]:1  m = [1 2; 3 4]
+Main:none:1  1 + 2 = 3
+Main:none:1  "Hello" = "Hello"
+Main:none:1  m = [1 2; 3 4]
 ```
 """
 macro dbg(exprs...)
