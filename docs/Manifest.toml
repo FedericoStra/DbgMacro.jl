@@ -15,7 +15,7 @@ uuid = "ade2ca70-3891-5945-98fb-dc099432e06a"
 
 [[Dbg]]
 path = ".."
-uuid = "816182cb-3be2-4b73-96a9-dd7ffe4cc5b9"
+uuid = "d6ce5c67-b3b1-4855-8eb4-4ca27575037e"
 version = "0.1.0"
 
 [[DocStringExtensions]]

@@ -1,7 +1,7 @@
 name = "Dbg"
-uuid = "816182cb-3be2-4b73-96a9-dd7ffe4cc5b9"
+uuid = "d6ce5c67-b3b1-4855-8eb4-4ca27575037e"
 authors = ["Federico Stra <stra.federico@gmail.com> and contributors"]
 version = "0.1.0"
 
 [compat]
-julia = "1.2"
+julia = "1"
