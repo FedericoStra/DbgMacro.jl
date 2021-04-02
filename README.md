@@ -20,9 +20,15 @@ It is inspired by Rust [`dbg!`](https://doc.rust-lang.org/std/macro.dbg.html) ma
 # Examples
 
 ```julia
+julia> using Dbg
+
 julia> m = [1 2; 3 4]
+2×2 Matrix{Int64}:
+ 1  2
+ 3  4
+
 julia> @dbg 1+2 "Hello" m
-Main:REPL[14]:1  1 + 2 = 3
-Main:REPL[14]:1  "Hello" = "Hello"
-Main:REPL[14]:1  m = [1 2; 3 4]
+Main:REPL[3]:1  1 + 2 = 3
+Main:REPL[3]:1  "Hello" = "Hello"
+Main:REPL[3]:1  m = [1 2; 3 4]
 ```
