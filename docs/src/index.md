@@ -1,13 +1,13 @@
 ```@meta
-CurrentModule = Dbg
+CurrentModule = DbgMacro
 DocTestSetup  = quote
-    using Dbg
+    using DbgMacro
 end
 ```
 
-# Dbg.jl
+# DbgMacro.jl
 
-Documentation for [Dbg.jl](https://github.com/FedericoStra/Dbg.jl).
+Documentation for [DbgMacro.jl](https://github.com/FedericoStra/DbgMacro.jl).
 
 This package provides a macro `@dbg`. When executing
 
@@ -23,7 +23,7 @@ It is inspired by Rust [`dbg!`](https://doc.rust-lang.org/std/macro.dbg.html) ma
 ## Examples
 
 ```@repl
-using Dbg
+using DbgMacro
 
 function fact(n::Integer)
     @dbg n
@@ -43,5 +43,5 @@ fact(5)
 ## Library
 
 ```@autodocs
-Modules = [Dbg]
+Modules = [DbgMacro]
 ```

@@ -1,7 +1,7 @@
 using Test
 using Suppressor
 
-using Dbg
+using DbgMacro
 
 function foo()
     m = [1 2; 3 4]
@@ -15,7 +15,7 @@ Main:runtests.jl:8  "Hello" = "Hello"
 Main:runtests.jl:8  m = [1 2; 3 4]
 """
 
-@testset "Dbg.jl" begin
+@testset "DbgMacro.jl" begin
     local result
     err = @capture_err result = foo()
     @test result == 42

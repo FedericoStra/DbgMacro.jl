@@ -1,4 +1,4 @@
-name = "Dbg"
+name = "DbgMacro"
 uuid = "d6ce5c67-b3b1-4855-8eb4-4ca27575037e"
 authors = ["Federico Stra <stra.federico@gmail.com> and contributors"]
 version = "0.1.0"

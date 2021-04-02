@@ -13,7 +13,7 @@ uuid = "2a0f44e3-6c83-55bd-87e4-b1978d98bd5f"
 deps = ["Printf"]
 uuid = "ade2ca70-3891-5945-98fb-dc099432e06a"
 
-[[Dbg]]
+[[DbgMacro]]
 path = ".."
 uuid = "d6ce5c67-b3b1-4855-8eb4-4ca27575037e"
 version = "0.1.0"

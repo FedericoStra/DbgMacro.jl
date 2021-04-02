@@ -1,4 +1,4 @@
-module Dbg
+module DbgMacro
 
 export @dbg
 

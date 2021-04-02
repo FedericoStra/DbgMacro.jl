@@ -51,9 +51,9 @@ jobs:
       - run: |
           julia --project=docs -e '
             using Documenter: DocMeta, doctest
-            using Dbg
-            DocMeta.setdocmeta!(Dbg, :DocTestSetup, :(using Dbg); recursive=true)
-            doctest(Dbg)'
+            using DbgMacro
+            DocMeta.setdocmeta!(DbgMacro, :DocTestSetup, :(using DbgMacro); recursive=true)
+            doctest(DbgMacro)'
       - run: julia --project=docs docs/make.jl
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
