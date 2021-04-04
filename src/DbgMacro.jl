@@ -1,6 +1,6 @@
 module DbgMacro
 
-export @dbg
+export @dbg, @dumpct, @dumprt
 
 """
     @dbg(expressions...)
@@ -33,6 +33,26 @@ macro dbg(exprs...)
             $(ex isa String ? repr(ex) : string(ex)),
             " = ", Base.repr($ex))) for ex in exprs)...)
     end)
+end
+
+export @dumpct, @dumprt
+
+"""
+    @dumpct <expression>
+
+Dump the expression at compile-time.
+"""
+macro dumpct(ex)
+    dump(QuoteNode(ex); maxdepth=32)
+end
+
+"""
+    @dumpct <expression>
+
+Dump the expression at run-time.
+"""
+macro dumprt(ex)
+    :(dump($(QuoteNode(ex)); maxdepth=32))
 end
 
 end
