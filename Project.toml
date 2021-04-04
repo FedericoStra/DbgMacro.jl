@@ -4,4 +4,4 @@ authors = ["Federico Stra <stra.federico@gmail.com> and contributors"]
 version = "0.1.0"
 
 [compat]
-julia = "1"
+julia = "1.2"
