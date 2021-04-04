@@ -23,7 +23,7 @@ preceded by the location in the format `module:file:line`. The output goes to `s
 
 It is inspired by Rust [`dbg!`](https://doc.rust-lang.org/std/macro.dbg.html) macro.
 
-# Examples
+## Examples
 
 ```julia
 julia> using DbgMacro
