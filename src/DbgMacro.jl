@@ -1,6 +1,6 @@
 module DbgMacro
 
-export @dbg, @dumpct, @dumprt
+export @dbg, @dumpct, @dumprt, @qn
 
 """
     @dbg(expressions...)
@@ -53,6 +53,15 @@ Dump the expression at run-time.
 """
 macro dumprt(ex)
     :(dump($(QuoteNode(ex)); maxdepth=32))
+end
+
+"""
+    @qn <expression>
+
+Return the expression, without \$ interpolation.
+"""
+macro qn(ex)
+    QuoteNode(ex)
 end
 
 end
