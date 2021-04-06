@@ -43,7 +43,7 @@ export @dumpct, @dumprt
 Dump the expression at compile-time.
 """
 macro dumpct(ex)
-    dump(QuoteNode(ex); maxdepth=32)
+    dump(ex; maxdepth=32)
 end
 
 """

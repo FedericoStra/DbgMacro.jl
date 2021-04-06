@@ -7,9 +7,9 @@ function foo()
 end
 
 expected_foo_err = """
-Main.Simple:simple.jl:5  1 + 2 = 3
-Main.Simple:simple.jl:5  "Hello" = "Hello"
-Main.Simple:simple.jl:5  m = [1 2; 3 4]
+Main.TestDbg:test_dbg.jl:5  1 + 2 = 3
+Main.TestDbg:test_dbg.jl:5  "Hello" = "Hello"
+Main.TestDbg:test_dbg.jl:5  m = [1 2; 3 4]
 """
 
 using Suppressor: @capture_err

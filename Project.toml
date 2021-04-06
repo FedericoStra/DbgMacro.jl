@@ -1,7 +1,7 @@
 name = "DbgMacro"
 uuid = "d6ce5c67-b3b1-4855-8eb4-4ca27575037e"
 authors = ["Federico Stra <stra.federico@gmail.com>"]
-version = "0.1.0"
+version = "0.2.0"
 
 [compat]
 julia = "1.2"
