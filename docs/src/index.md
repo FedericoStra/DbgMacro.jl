@@ -9,7 +9,9 @@ end
 
 Documentation for [DbgMacro.jl](https://github.com/FedericoStra/DbgMacro.jl).
 
-This package provides a macro `@dbg`. When executing
+This package provides four macros: `@dbg`, `@dumpct`, `@dumprt` and `@qn`.
+
+When executing
 
 ```julia
 @dbg ex1 ex2 ex3 ...
@@ -19,6 +21,23 @@ the macro generates code that displays all the expressions in the same way as `@
 preceded by the location in the format `module:file:line`. The output goes to `stderr`. Useful for debugging.
 
 It is inspired by Rust [`dbg!`](https://doc.rust-lang.org/std/macro.dbg.html) macro.
+
+The macros `@dumpct` and `@dumprt`
+
+```julia
+@dumpct expression
+@dumprt expression
+```
+
+dump the provided expression at compile-time or run-time respectively.
+
+The macro `@qn`
+
+```julia
+@qn expression
+```
+
+returns the quoted expression without interpolating contained `$`.
 
 ## Examples
 
@@ -33,6 +52,22 @@ function fact(n::Integer)
 end
 
 fact(5)
+
+function ct(x)
+    @dumpct :x + x + $x
+    x
+end
+
+ct(42)
+
+function rt(x)
+    @dumprt :x + x + $x
+    x
+end
+
+rt(42)
+
+@qn :x + x + $x
 ```
 
 ## Index

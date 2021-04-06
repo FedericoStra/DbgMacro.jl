@@ -3,9 +3,9 @@ module DbgMacro
 export @dbg, @dumpct, @dumprt, @qn
 
 """
-    @dbg(expressions...)
+    @dbg <expr1> <expr2> <expr3> ...
 
-Displays all the expressions in the same way as `@show` does, each on a separate line,
+Display all the expressions in the same way as `@show` does, each on a separate line,
 preceded by the location in the format `module:file:line`.
 
 The output goes to `stderr`.
@@ -41,15 +41,63 @@ export @dumpct, @dumprt
     @dumpct <expression>
 
 Dump the expression at compile-time.
+
+# Examples
+
+```jldoctest
+julia> function foo(x)
+           @dumpct :x + x + \$x
+           x
+       end
+Expr
+  head: Symbol call
+  args: Array{Any}((4,))
+    1: Symbol +
+    2: QuoteNode
+      value: Symbol x
+    3: Symbol x
+    4: Expr
+      head: Symbol \$
+      args: Array{Any}((1,))
+        1: Symbol x
+foo (generic function with 1 method)
+
+julia> foo(42)
+42
+```
 """
 macro dumpct(ex)
     dump(ex; maxdepth=32)
 end
 
 """
-    @dumpct <expression>
+    @dumprt <expression>
 
 Dump the expression at run-time.
+
+# Examples
+
+```jldoctest
+julia> function foo(x)
+           @dumprt :x + x + \$x
+           x
+       end
+foo (generic function with 1 method)
+
+julia> foo(42)
+Expr
+  head: Symbol call
+  args: Array{Any}((4,))
+    1: Symbol +
+    2: QuoteNode
+      value: Symbol x
+    3: Symbol x
+    4: Expr
+      head: Symbol \$
+      args: Array{Any}((1,))
+        1: Symbol x
+42
+```
 """
 macro dumprt(ex)
     :(dump($(QuoteNode(ex)); maxdepth=32))
@@ -59,6 +107,13 @@ end
     @qn <expression>
 
 Return the expression, without \$ interpolation.
+
+# Examples
+
+```jldoctest
+julia> @qn foo(1, x, :y, \$z)
+:(foo(1, x, :y, \$(Expr(:\$, :z))))
+```
 """
 macro qn(ex)
     QuoteNode(ex)
