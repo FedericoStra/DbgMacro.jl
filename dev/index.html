@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Home · DbgMacro.jl</title><link rel="canonical" href="https://FedericoStra.github.io/DbgMacro.jl/"/><link href="https://fonts.googleapis.com/css?family=Lato|Roboto+Mono" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/fontawesome.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/solid.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/brands.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" rel="stylesheet" type="text/css"/><script>documenterBaseURL="."</script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" data-main="assets/documenter.js"></script><script src="siteinfo.js"></script><script src="../versions.js"></script><link class="docs-theme-link" rel="stylesheet" type="text/css" href="assets/themes/documenter-dark.css" data-theme-name="documenter-dark" data-theme-primary-dark/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="assets/themes/documenter-light.css" data-theme-name="documenter-light" data-theme-primary/><script src="assets/themeswap.js"></script></head><body><div id="documenter"><nav class="docs-sidebar"><div class="docs-package-name"><span class="docs-autofit">DbgMacro.jl</span></div><form class="docs-search" action="search/"><input class="docs-search-query" id="documenter-search-query" name="q" type="text" placeholder="Search docs"/></form><ul class="docs-menu"><li class="is-active"><a class="tocitem" href>Home</a><ul class="internal"><li><a class="tocitem" href="#Examples"><span>Examples</span></a></li><li><a class="tocitem" href="#Index"><span>Index</span></a></li><li><a class="tocitem" href="#Library"><span>Library</span></a></li></ul></li></ul><div class="docs-version-selector field has-addons"><div class="control"><span class="docs-label button is-static is-size-7">Version</span></div><div class="docs-selector control is-expanded"><div class="select is-fullwidth is-size-7"><select id="documenter-version-selector"></select></div></div></div></nav><div class="docs-main"><header class="docs-navbar"><nav class="breadcrumb"><ul class="is-hidden-mobile"><li class="is-active"><a href>Home</a></li></ul><ul class="is-hidden-tablet"><li class="is-active"><a href>Home</a></li></ul></nav><div class="docs-right"><a class="docs-edit-link" href="https://github.com/FedericoStra/DbgMacro.jl/blob/master/docs/src/index.md#" title="Edit on GitHub"><span class="docs-icon fab"></span><span class="docs-label is-hidden-touch">Edit on GitHub</span></a><a class="docs-settings-button fas fa-cog" id="documenter-settings-button" href="#" title="Settings"></a><a class="docs-sidebar-button fa fa-bars is-hidden-desktop" id="documenter-sidebar-button" href="#"></a></div></header><article class="content" id="documenter-page"><h1 id="DbgMacro.jl"><a class="docs-heading-anchor" href="#DbgMacro.jl">DbgMacro.jl</a><a id="DbgMacro.jl-1"></a><a class="docs-heading-anchor-permalink" href="#DbgMacro.jl" title="Permalink"></a></h1><p>Documentation for <a href="https://github.com/FedericoStra/DbgMacro.jl">DbgMacro.jl</a>.</p><p>This package provides a macro <code>@dbg</code>. When executing</p><pre><code class="language-julia">@dbg ex1 ex2 ex3 ...</code></pre><p>the macro generates code that displays all the expressions in the same way as <code>@show</code> does, each on a separate line, preceded by the location in the format <code>module:file:line</code>. The output goes to <code>stderr</code>. Useful for debugging.</p><p>It is inspired by Rust <a href="https://doc.rust-lang.org/std/macro.dbg.html"><code>dbg!</code></a> macro.</p><h2 id="Examples"><a class="docs-heading-anchor" href="#Examples">Examples</a><a id="Examples-1"></a><a class="docs-heading-anchor-permalink" href="#Examples" title="Permalink"></a></h2><pre><code class="language-julia-repl">julia&gt; using DbgMacro
+<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Home · DbgMacro.jl</title><link rel="canonical" href="https://FedericoStra.github.io/DbgMacro.jl/"/><link href="https://fonts.googleapis.com/css?family=Lato|Roboto+Mono" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/fontawesome.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/solid.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/brands.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" rel="stylesheet" type="text/css"/><script>documenterBaseURL="."</script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" data-main="assets/documenter.js"></script><script src="siteinfo.js"></script><script src="../versions.js"></script><link class="docs-theme-link" rel="stylesheet" type="text/css" href="assets/themes/documenter-dark.css" data-theme-name="documenter-dark" data-theme-primary-dark/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="assets/themes/documenter-light.css" data-theme-name="documenter-light" data-theme-primary/><script src="assets/themeswap.js"></script></head><body><div id="documenter"><nav class="docs-sidebar"><div class="docs-package-name"><span class="docs-autofit">DbgMacro.jl</span></div><form class="docs-search" action="search/"><input class="docs-search-query" id="documenter-search-query" name="q" type="text" placeholder="Search docs"/></form><ul class="docs-menu"><li class="is-active"><a class="tocitem" href>Home</a><ul class="internal"><li><a class="tocitem" href="#Examples"><span>Examples</span></a></li><li><a class="tocitem" href="#Index"><span>Index</span></a></li><li><a class="tocitem" href="#Library"><span>Library</span></a></li></ul></li></ul><div class="docs-version-selector field has-addons"><div class="control"><span class="docs-label button is-static is-size-7">Version</span></div><div class="docs-selector control is-expanded"><div class="select is-fullwidth is-size-7"><select id="documenter-version-selector"></select></div></div></div></nav><div class="docs-main"><header class="docs-navbar"><nav class="breadcrumb"><ul class="is-hidden-mobile"><li class="is-active"><a href>Home</a></li></ul><ul class="is-hidden-tablet"><li class="is-active"><a href>Home</a></li></ul></nav><div class="docs-right"><a class="docs-edit-link" href="https://github.com/FedericoStra/DbgMacro.jl/blob/master/docs/src/index.md#" title="Edit on GitHub"><span class="docs-icon fab"></span><span class="docs-label is-hidden-touch">Edit on GitHub</span></a><a class="docs-settings-button fas fa-cog" id="documenter-settings-button" href="#" title="Settings"></a><a class="docs-sidebar-button fa fa-bars is-hidden-desktop" id="documenter-sidebar-button" href="#"></a></div></header><article class="content" id="documenter-page"><h1 id="DbgMacro.jl"><a class="docs-heading-anchor" href="#DbgMacro.jl">DbgMacro.jl</a><a id="DbgMacro.jl-1"></a><a class="docs-heading-anchor-permalink" href="#DbgMacro.jl" title="Permalink"></a></h1><p>Documentation for <a href="https://github.com/FedericoStra/DbgMacro.jl">DbgMacro.jl</a>.</p><p>This package provides four macros: <code>@dbg</code>, <code>@dumpct</code>, <code>@dumprt</code> and <code>@qn</code>.</p><p>When executing</p><pre><code class="language-julia">@dbg ex1 ex2 ex3 ...</code></pre><p>the macro generates code that displays all the expressions in the same way as <code>@show</code> does, each on a separate line, preceded by the location in the format <code>module:file:line</code>. The output goes to <code>stderr</code>. Useful for debugging.</p><p>It is inspired by Rust <a href="https://doc.rust-lang.org/std/macro.dbg.html"><code>dbg!</code></a> macro.</p><p>The macros <code>@dumpct</code> and <code>@dumprt</code></p><pre><code class="language-julia">@dumpct expression
+@dumprt expression</code></pre><p>dump the provided expression at compile-time or run-time respectively.</p><p>The macro <code>@qn</code></p><pre><code class="language-julia">@qn expression</code></pre><p>returns the quoted expression without interpolating contained <code>$</code>.</p><h2 id="Examples"><a class="docs-heading-anchor" href="#Examples">Examples</a><a id="Examples-1"></a><a class="docs-heading-anchor-permalink" href="#Examples" title="Permalink"></a></h2><pre><code class="language-julia-repl">julia&gt; using DbgMacro
 
 julia&gt; function fact(n::Integer)
            @dbg n
@@ -10,15 +11,95 @@ julia&gt; function fact(n::Integer)
 fact (generic function with 1 method)
 
 julia&gt; fact(5)
-Main.##ex-#258:none:3  n = 5
-Main.##ex-#258:none:3  n = 4
-Main.##ex-#258:none:3  n = 3
-Main.##ex-#258:none:3  n = 2
-Main.##ex-#258:none:3  n = 1
-Main.##ex-#258:none:3  n = 0
-120</code></pre><h2 id="Index"><a class="docs-heading-anchor" href="#Index">Index</a><a id="Index-1"></a><a class="docs-heading-anchor-permalink" href="#Index" title="Permalink"></a></h2><ul><li><a href="#DbgMacro.@dbg-Tuple"><code>DbgMacro.@dbg</code></a></li><li><a href="#DbgMacro.@dumpct-Tuple{Any}"><code>DbgMacro.@dumpct</code></a></li><li><a href="#DbgMacro.@dumprt-Tuple{Any}"><code>DbgMacro.@dumprt</code></a></li><li><a href="#DbgMacro.@qn-Tuple{Any}"><code>DbgMacro.@qn</code></a></li></ul><h2 id="Library"><a class="docs-heading-anchor" href="#Library">Library</a><a id="Library-1"></a><a class="docs-heading-anchor-permalink" href="#Library" title="Permalink"></a></h2><article class="docstring"><header><a class="docstring-binding" id="DbgMacro.@dbg-Tuple" href="#DbgMacro.@dbg-Tuple"><code>DbgMacro.@dbg</code></a> — <span class="docstring-category">Macro</span></header><section><div><pre><code class="language-julia">@dbg(expressions...)</code></pre><p>Displays all the expressions in the same way as <code>@show</code> does, each on a separate line, preceded by the location in the format <code>module:file:line</code>.</p><p>The output goes to <code>stderr</code>.</p><p>Useful for debugging.</p><p><strong>Examples</strong></p><pre><code class="language-julia-repl">julia&gt; m = [1 2; 3 4];
+Main.##ex-#261:none:3  n = 5
+Main.##ex-#261:none:3  n = 4
+Main.##ex-#261:none:3  n = 3
+Main.##ex-#261:none:3  n = 2
+Main.##ex-#261:none:3  n = 1
+Main.##ex-#261:none:3  n = 0
+120
+
+julia&gt; function ct(x)
+           @dumpct :x + x + $x
+           x
+       end
+Expr
+  head: Symbol call
+  args: Array{Any}((4,))
+    1: Symbol +
+    2: QuoteNode
+      value: Symbol x
+    3: Symbol x
+    4: Expr
+      head: Symbol $
+      args: Array{Any}((1,))
+        1: Symbol x
+ct (generic function with 1 method)
+
+julia&gt; ct(42)
+42
+
+julia&gt; function rt(x)
+           @dumprt :x + x + $x
+           x
+       end
+rt (generic function with 1 method)
+
+julia&gt; rt(42)
+Expr
+  head: Symbol call
+  args: Array{Any}((4,))
+    1: Symbol +
+    2: QuoteNode
+      value: Symbol x
+    3: Symbol x
+    4: Expr
+      head: Symbol $
+      args: Array{Any}((1,))
+        1: Symbol x
+42
+
+julia&gt; @qn :x + x + $x
+:(:x + x + $(Expr(:$, :x)))</code></pre><h2 id="Index"><a class="docs-heading-anchor" href="#Index">Index</a><a id="Index-1"></a><a class="docs-heading-anchor-permalink" href="#Index" title="Permalink"></a></h2><ul><li><a href="#DbgMacro.@dbg-Tuple"><code>DbgMacro.@dbg</code></a></li><li><a href="#DbgMacro.@dumpct-Tuple{Any}"><code>DbgMacro.@dumpct</code></a></li><li><a href="#DbgMacro.@dumprt-Tuple{Any}"><code>DbgMacro.@dumprt</code></a></li><li><a href="#DbgMacro.@qn-Tuple{Any}"><code>DbgMacro.@qn</code></a></li></ul><h2 id="Library"><a class="docs-heading-anchor" href="#Library">Library</a><a id="Library-1"></a><a class="docs-heading-anchor-permalink" href="#Library" title="Permalink"></a></h2><article class="docstring"><header><a class="docstring-binding" id="DbgMacro.@dbg-Tuple" href="#DbgMacro.@dbg-Tuple"><code>DbgMacro.@dbg</code></a> — <span class="docstring-category">Macro</span></header><section><div><pre><code class="language-julia">@dbg &lt;expr1&gt; &lt;expr2&gt; &lt;expr3&gt; ...</code></pre><p>Display all the expressions in the same way as <code>@show</code> does, each on a separate line, preceded by the location in the format <code>module:file:line</code>.</p><p>The output goes to <code>stderr</code>.</p><p>Useful for debugging.</p><p><strong>Examples</strong></p><pre><code class="language-julia-repl">julia&gt; m = [1 2; 3 4];
 
 julia&gt; @dbg 1+2 &quot;Hello&quot; m
 Main:none:1  1 + 2 = 3
 Main:none:1  &quot;Hello&quot; = &quot;Hello&quot;
-Main:none:1  m = [1 2; 3 4]</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/FedericoStra/DbgMacro.jl/blob/3948ccbab29a874c58ff065f79cdeb4c4c1d7230/src/DbgMacro.jl#L5-L25">source</a></section></article><article class="docstring"><header><a class="docstring-binding" id="DbgMacro.@dumpct-Tuple{Any}" href="#DbgMacro.@dumpct-Tuple{Any}"><code>DbgMacro.@dumpct</code></a> — <span class="docstring-category">Macro</span></header><section><div><pre><code class="language-julia">@dumpct &lt;expression&gt;</code></pre><p>Dump the expression at compile-time.</p></div><a class="docs-sourcelink" target="_blank" href="https://github.com/FedericoStra/DbgMacro.jl/blob/3948ccbab29a874c58ff065f79cdeb4c4c1d7230/src/DbgMacro.jl#L40-L44">source</a></section></article><article class="docstring"><header><a class="docstring-binding" id="DbgMacro.@dumprt-Tuple{Any}" href="#DbgMacro.@dumprt-Tuple{Any}"><code>DbgMacro.@dumprt</code></a> — <span class="docstring-category">Macro</span></header><section><div><pre><code class="language-julia">@dumpct &lt;expression&gt;</code></pre><p>Dump the expression at run-time.</p></div><a class="docs-sourcelink" target="_blank" href="https://github.com/FedericoStra/DbgMacro.jl/blob/3948ccbab29a874c58ff065f79cdeb4c4c1d7230/src/DbgMacro.jl#L49-L53">source</a></section></article><article class="docstring"><header><a class="docstring-binding" id="DbgMacro.@qn-Tuple{Any}" href="#DbgMacro.@qn-Tuple{Any}"><code>DbgMacro.@qn</code></a> — <span class="docstring-category">Macro</span></header><section><div><pre><code class="language-julia">@qn &lt;expression&gt;</code></pre><p>Return the expression, without $ interpolation.</p></div><a class="docs-sourcelink" target="_blank" href="https://github.com/FedericoStra/DbgMacro.jl/blob/3948ccbab29a874c58ff065f79cdeb4c4c1d7230/src/DbgMacro.jl#L58-L62">source</a></section></article></article><nav class="docs-footer"><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> on <span class="colophon-date" title="Tuesday 6 April 2021 15:59">Tuesday 6 April 2021</span>. Using Julia version 1.6.0.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
+Main:none:1  m = [1 2; 3 4]</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/FedericoStra/DbgMacro.jl/blob/0329457a19c25bfe8fb0735c5b25f41a49d8a7c0/src/DbgMacro.jl#L5-L25">source</a></section></article><article class="docstring"><header><a class="docstring-binding" id="DbgMacro.@dumpct-Tuple{Any}" href="#DbgMacro.@dumpct-Tuple{Any}"><code>DbgMacro.@dumpct</code></a> — <span class="docstring-category">Macro</span></header><section><div><pre><code class="language-julia">@dumpct &lt;expression&gt;</code></pre><p>Dump the expression at compile-time.</p><p><strong>Examples</strong></p><pre><code class="language-julia-repl">julia&gt; function foo(x)
+           @dumpct :x + x + $x
+           x
+       end
+Expr
+  head: Symbol call
+  args: Array{Any}((4,))
+    1: Symbol +
+    2: QuoteNode
+      value: Symbol x
+    3: Symbol x
+    4: Expr
+      head: Symbol $
+      args: Array{Any}((1,))
+        1: Symbol x
+foo (generic function with 1 method)
+
+julia&gt; foo(42)
+42</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/FedericoStra/DbgMacro.jl/blob/0329457a19c25bfe8fb0735c5b25f41a49d8a7c0/src/DbgMacro.jl#L40-L68">source</a></section></article><article class="docstring"><header><a class="docstring-binding" id="DbgMacro.@dumprt-Tuple{Any}" href="#DbgMacro.@dumprt-Tuple{Any}"><code>DbgMacro.@dumprt</code></a> — <span class="docstring-category">Macro</span></header><section><div><pre><code class="language-julia">@dumprt &lt;expression&gt;</code></pre><p>Dump the expression at run-time.</p><p><strong>Examples</strong></p><pre><code class="language-julia-repl">julia&gt; function foo(x)
+           @dumprt :x + x + $x
+           x
+       end
+foo (generic function with 1 method)
+
+julia&gt; foo(42)
+Expr
+  head: Symbol call
+  args: Array{Any}((4,))
+    1: Symbol +
+    2: QuoteNode
+      value: Symbol x
+    3: Symbol x
+    4: Expr
+      head: Symbol $
+      args: Array{Any}((1,))
+        1: Symbol x
+42</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/FedericoStra/DbgMacro.jl/blob/0329457a19c25bfe8fb0735c5b25f41a49d8a7c0/src/DbgMacro.jl#L73-L101">source</a></section></article><article class="docstring"><header><a class="docstring-binding" id="DbgMacro.@qn-Tuple{Any}" href="#DbgMacro.@qn-Tuple{Any}"><code>DbgMacro.@qn</code></a> — <span class="docstring-category">Macro</span></header><section><div><pre><code class="language-julia">@qn &lt;expression&gt;</code></pre><p>Return the expression, without $ interpolation.</p><p><strong>Examples</strong></p><pre><code class="language-julia-repl">julia&gt; @qn foo(1, x, :y, $z)
+:(foo(1, x, :y, $(Expr(:$, :z))))</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/FedericoStra/DbgMacro.jl/blob/0329457a19c25bfe8fb0735c5b25f41a49d8a7c0/src/DbgMacro.jl#L106-L117">source</a></section></article></article><nav class="docs-footer"><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> on <span class="colophon-date" title="Tuesday 6 April 2021 17:01">Tuesday 6 April 2021</span>. Using Julia version 1.6.0.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
