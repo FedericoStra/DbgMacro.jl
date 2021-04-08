@@ -1,3 +1,5 @@
+PACKAGE := DbgMacro
+
 .PHONY: all
 all: makedocs
 
@@ -8,10 +10,10 @@ makedocs: setup-project
 
 
 DOCTEST_CMD = \
-using Documenter: DocMeta, doctest ;\
-using DbgMacro ;\
-DocMeta.setdocmeta!(DbgMacro, :DocTestSetup, :(using DbgMacro); recursive=true) ;\
-doctest(DbgMacro)
+using Documenter: DocMeta, doctest; \
+using $(PACKAGE); \
+DocMeta.setdocmeta!($(PACKAGE), :DocTestSetup, :(using $(PACKAGE)); recursive=true); \
+doctest($(PACKAGE))
 
 .PHONY: doctest
 doctest: setup-project
